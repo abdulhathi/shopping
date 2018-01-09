@@ -1,0 +1,5 @@
+{
+    "ConnectionString":{
+        "Product": "http://localhost:2000/products/"
+    }
+}
