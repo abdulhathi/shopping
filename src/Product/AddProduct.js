@@ -8,8 +8,6 @@ import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
 import API from "../WebAPI/mongoapi";
 import PhotoCamera from 'material-ui-icons/PhotoCamera';
-import ProductList from '../Product/ProductList';
-import AddProduct from '../Product/AddProduct';
 
 const formData = require('form-data');
 
@@ -86,7 +84,7 @@ const styles = theme => ({
     },
 });
 
-class Product extends React.Component {
+class AddProduct extends React.Component {
 
     constructor() {
         super();
@@ -97,7 +95,7 @@ class Product extends React.Component {
         Price: 0,
         ProductImage: 'http://localhost:2000/uploads/product.png'
     }
-    
+
     state = {
         index: 0,
         id: '',
@@ -107,7 +105,7 @@ class Product extends React.Component {
         fileFormData: new formData()
     };
 
-    editProduct(e, selectedProduct){
+    editProduct(e, selectedProduct) {
         e.preventDefault();
         this.setState({
             AddOrUpdate: 'Update',
@@ -166,7 +164,7 @@ class Product extends React.Component {
             id: '',
             AddOrUpdate: 'Add',
             fileFormData: new formData(),
-           
+
         })
     }
     FileLoaded = value => event => {
@@ -184,7 +182,6 @@ class Product extends React.Component {
     }
     render() {
         const { classes } = this.props;
-
         return (
             <div>
                 <Card className={classes.card}>
@@ -231,15 +228,14 @@ class Product extends React.Component {
                         />
                     </CardActions>
                 </Card>
-                <ProductList newProduct={this.state.newProduct} editProduct={this.editProduct} 
-                    AddOrUpdate={this.state.AddOrUpdate} />
+                
             </div>
         );
     }
 }
 
-Product.propTypes = {
+AddProduct.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Product);
+export default withStyles(styles)(AddProduct);

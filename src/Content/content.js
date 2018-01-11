@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import { HomeComponent } from "../routes/About";
 
 
 class Content extends Component {
@@ -28,7 +29,6 @@ class Content extends Component {
         });
 
         const App = () => (
-
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home} />
